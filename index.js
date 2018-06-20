@@ -10,7 +10,7 @@ function testAcc (log,config){
   this.log = log
   this.swstatus = 0
 
-  this.testservice = new Service.Switch(this.name)
+  this.testservice = new service.Switch(this.name)
 }
 
 testAcc.prototype = {
@@ -35,11 +35,11 @@ testAcc.prototype = {
     this.log('setService')
 
     var infosv = new service.AccessoryInformation()
-    infosv.setCharacteristic(Characteristic.Manufacturer,'Test Manufacture')
-          .setCharacteristic(Characteristic.Model,'Test Model')
-          .setCharacteristic(Characteristic.SerialNumber,'TEST1234')
+    infosv.setCharacteristic(chara.Manufacturer,'Test Manufacture')
+          .setCharacteristic(chara.Model,'Test Model')
+          .setCharacteristic(chara.SerialNumber,'TEST1234')
 
-    this.testservice.getCharacteristic(Characteristic.On)
+    this.testservice.getCharacteristic(chara.On)
           .on('set',this.setState.bind(this))
           .on('get',this.getState.bind(this))
 
