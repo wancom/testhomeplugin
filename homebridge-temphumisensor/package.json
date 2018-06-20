@@ -1,7 +1,7 @@
 {
-	"name": "homebridge-TestPlugin",
+	"name": "homebridge-temphumisensor",
 	"version": "0.0.1",
-	"description": "This is a test.",
+	"description": "This is a temp and humi sensor plugin.",
 	"keywords": [
 		"homebridge-plugin"
 	],
