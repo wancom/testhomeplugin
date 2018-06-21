@@ -2,15 +2,6 @@
 
 #coding:utf-8
 
-while True:
-#    rpa = map(int, input().split())
-    rpa = [int(s) for s in input().split()]
-    if rpa[0] == -1:
-        break
-    pa = hsv2rgb(rpa[0],rpa[1],rpa[2])
-    print(pa[0])
-    print(pa[1])
-    print(pa[2])
 
 def hsv2rgb(h,s,v):
     r = v
@@ -54,3 +45,15 @@ def hsv2rgb(h,s,v):
         b = n
 
     return r,g,b
+
+
+while True:
+#    rpa = map(int, input().split())
+    rpa = [int(s) for s in input().split()]
+    if rpa[0] == -1:
+        break
+    pa = hsv2rgb(rpa[0],rpa[1],rpa[2])
+    print(pa[0])
+    print(pa[1])
+    print(pa[2])
+
