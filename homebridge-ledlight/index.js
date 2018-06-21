@@ -27,9 +27,9 @@ LEDAcc.prototype = {
   setPower: function (value, callback) {
     this.pwrstatus = value
     if (value == 1) {
-      this.p = spawn(this.ledcmd,null,{stdio:['pipe','inherit','inherit']})
+      this.p = spawn(this.ledcmd,[],{stdio:['pipe','inherit','inherit']})
     } else {
-      this.p.stdin.write('-1 -1 -1')
+      this.p.stdin.write('-1 -1 -1\n')
     }
     callback(null)
   },
@@ -39,7 +39,7 @@ LEDAcc.prototype = {
 
   setBrightness: function (value, callback) {
     this.brightness = value
-    this.p.stdin.write(String(this.hue) + ' ' + String(this.saturation) + ' ' + String(this.brightness))
+    this.p.stdin.write(String(this.hue) + ' ' + String(this.saturation) + ' ' + String(this.brightness) + '\n')
     callback(null)
   },
   getBrightness: function (callback) {
@@ -48,7 +48,7 @@ LEDAcc.prototype = {
 
   setHue: function (value, callback) {
     this.hue = value
-    this.p.stdin.write(String(this.hue) + ' ' + String(this.saturation) + ' ' + String(this.brightness))
+    this.p.stdin.write(String(this.hue) + ' ' + String(this.saturation) + ' ' + String(this.brightness) + '\n')
     callback(null)
   },
   getHue: function (callback) {
@@ -57,7 +57,7 @@ LEDAcc.prototype = {
 
   setSaturation: function (value, callback) {
     this.saturation = value
-    this.p.stdin.write(String(this.hue) + ' ' + String(this.saturation) + ' ' + String(this.brightness))
+    this.p.stdin.write(String(this.hue) + ' ' + String(this.saturation) + ' ' + String(this.brightness) + '\n')
     callback(null)
   },
   getSaturation: function (callback) {
