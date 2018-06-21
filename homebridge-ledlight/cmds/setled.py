@@ -23,7 +23,8 @@ pg.start(0) #duty ratio is 0%
 pb.start(0) #duty ratio is 0%
 
 while True:
-    rpa = map(int, input().split())
+#    rpa = map(int, input().split())
+    rpa = [int(s) for s in input().split()]
     if rpa[0] == -1:
         break
     pa = hsv2rgb(rpa[0],rpa[1],rpa[2])
