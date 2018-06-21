@@ -1,3 +1,5 @@
+#! /usr/bin/python3
+
 import sys
 humi = 50
 print("%d" % humi, end="")

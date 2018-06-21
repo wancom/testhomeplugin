@@ -1,3 +1,5 @@
+#! /usr/bin/python3
+
 import sys
 temp = 25
 print("%d" % temp, end="")
