@@ -1,6 +1,5 @@
 #coding:utf-8
 import RPi.GPIO as GPIO
-import time
 #macro
 ledr=23 #16
 ledg=24 #18
@@ -21,7 +20,6 @@ pr.start(0) #duty ratio is 0%
 pg.start(0) #duty ratio is 0%
 pb.start(0) #duty ratio is 0%
 
-for i in range(3):
 while True:
     rpa = map(int, raw_input().split())
     if rpa[0] == -1:
