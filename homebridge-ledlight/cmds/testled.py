@@ -1,9 +1,9 @@
-#/usr/bin/python3
+#! /usr/bin/python3
 
 #coding:utf-8
 
 while True:
-    rpa = map(int, raw_input().split())
+    rpa = map(int, input().split())
     if rpa[0] == -1:
         break
     pa = hsv2rgb(rpa[0],rpa[1],rpa[2])
@@ -31,23 +31,23 @@ def hsv2rgb(h,s,v):
         r = v
         g = k
         b = m
-    else if hi == 1:
+    if hi == 1:
         r = n
         g = v
         b = m
-    else if hi == 2:
+    if hi == 2:
         r = m
         g = v
         b = k
-    else if hi == 3:
+    if hi == 3:
         r = m
         g = n
         b = v
-    else if hi == 4:
+    if hi == 4:
         r = k
         g = m
         b = v
-    else if hi == 5:
+    if hi == 5:
         r = v
         g = m
         b = n
