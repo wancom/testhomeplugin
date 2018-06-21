@@ -4,47 +4,32 @@
 import RPi.GPIO as GPIO
 
 def hsv2rgb(h,s,v):
-    r = v
-    g = v
-    b = v
-
     if s == 0:
-        return r,g,b
+        return v,v,v
 
     if h == 360:
         h=0
-    hi = h/60
+    hi = int(h/60)
     f = h/60.0 - hi
     m = v - v*s/100
     n = v - (v*s/100)*f
     k = v - (v*s/100)*(1-f)
 
     if hi == 0:
-        r = v
-        g = k
-        b = m
+        return v,k,m
     if hi == 1:
-        r = n
-        g = v
-        b = m
+        return n,v,m
     if hi == 2:
-        r = m
-        g = v
-        b = k
+        return m,v,k
     if hi == 3:
-        r = m
-        g = n
-        b = v
+        return m,n,v
     if hi == 4:
-        r = k
-        g = m
-        b = v
+        return k,m,v
     if hi == 5:
-        r = v
-        g = m
-        b = n
+        return v,m,n
 
-    return r,g,b
+    return v,v,v
+
 
 
 #macro
