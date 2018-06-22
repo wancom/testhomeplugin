@@ -25,7 +25,10 @@ LEDAcc.prototype = {
   },
 
   setPower: function (value, callback) {
-    if (this.pwrstatus == value) callback(null)
+    if (this.pwrstatus == value) {
+      callback(null)
+      return
+    }
     this.pwrstatus = value
     if (value == 1) {
       this.p = spawn(this.ledcmd,[],{stdio:['pipe','inherit','inherit']})
