@@ -29,7 +29,7 @@ THAcc.prototype = {
         callback(err)
         return
       }
-      callback(null,parseInt(stdout, 10))
+      callback(null,parseFloat(stdout, 10))
     })
   },
 
@@ -39,7 +39,7 @@ THAcc.prototype = {
         callback(err)
         return
       }
-      callback(null,parseInt(stdout, 10))
+      callback(null,parseFloat(stdout, 10))
     })
   },
 
