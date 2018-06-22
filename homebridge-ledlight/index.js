@@ -43,6 +43,10 @@ LEDAcc.prototype = {
   },
 
   setBrightness: function (value, callback) {
+    if (this.pwrstatus == 0) {
+      callback(null)
+      return
+    }
     this.brightness = value
     this.p.stdin.write(String(this.hue) + ' ' + String(this.saturation) + ' ' + String(this.brightness) + '\n')
     callback(null)
@@ -52,6 +56,10 @@ LEDAcc.prototype = {
   },
 
   setHue: function (value, callback) {
+    if (this.pwrstatus == 0) {
+      callback(null)
+      return
+    }
     this.hue = value
     this.p.stdin.write(String(this.hue) + ' ' + String(this.saturation) + ' ' + String(this.brightness) + '\n')
     callback(null)
@@ -61,6 +69,10 @@ LEDAcc.prototype = {
   },
 
   setSaturation: function (value, callback) {
+    if (this.pwrstatus == 0) {
+      callback(null)
+      return
+    }
     this.saturation = value
     this.p.stdin.write(String(this.hue) + ' ' + String(this.saturation) + ' ' + String(this.brightness) + '\n')
     callback(null)
