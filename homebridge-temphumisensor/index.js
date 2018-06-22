@@ -27,6 +27,7 @@ THAcc.prototype = {
     exec(this.tempcmd,function(err,stdout,stderr){
       if (err !== null) {
         callback(err)
+        return
       }
       callback(null,parseInt(stdout, 10))
     })
@@ -36,6 +37,7 @@ THAcc.prototype = {
     exec(this.humicmd,function(err,stdout,stderr){
       if (err !== null) {
         callback(err)
+        return
       }
       callback(null,parseInt(stdout, 10))
     })
