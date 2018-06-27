@@ -16,7 +16,7 @@ function PIRAcc (log,config){
 
   this.p.stdout.on('data', (data) => {
     this.status = parseInt(data.toString(),10)
-    this.log('Status changed:' + String(this.status))
+    // this.log('Status changed:' + String(this.status))
     this.pirservice.getCharacteristic(chara.MotionDetected).setValue(this.status)
   })
 }
