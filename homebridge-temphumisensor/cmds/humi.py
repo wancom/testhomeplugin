@@ -17,7 +17,7 @@ GPIO.setmode(GPIO.BCM)
 GPIO.cleanup()
 
 # read data using pin 14
-instance = dht11.DHT11(pin=24)
+instance = dht11.DHT11(pin=10)
 
 for i in range(1,10):
     result = instance.read()
