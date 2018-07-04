@@ -1,0 +1,21 @@
+{
+	"name": "homebridge-pirsensor",
+	"version": "0.0.1",
+	"description": "This is a PIR sensor plugin.",
+	"keywords": [
+		"homebridge-plugin"
+	],
+	"homepage": "https://github.com/wancom/testhomeplugin",
+	"author": "s1240095",
+	"repository": {
+		"type": "git",
+		"url": "git://github.com/wancom/testhomeplugin"
+	},
+	"bugs": {
+		"url": "https://github.com/wancom/testhomeplugin/issues"
+	},
+	"engines": {
+		"node": ">=0.12.0",
+		"homebridge": ">=0.4.1"
+	}
+}
