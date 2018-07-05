@@ -10,8 +10,8 @@ module.exports = function (homebridge) {
 function RPAcc (log,config){
   this.log = log
   this.swstatus = 1
-  this.poweron = '/sbin/shutdown -c'
-  this.poweroff = '/sbin/shutdown +10'
+  this.poweron = config['oncmd']
+  this.poweroff = config['offcmd']
 
   this.rpservice = new service.Switch(this.name)
 }
@@ -27,12 +27,11 @@ RPAcc.prototype = {
     this.swstatus = value
     exec(value ? this.poweron : this.poweroff,function(err,stdout,stderr){
       if (err !== null) {
-        callback(err)
         return
       }
       
-      callback(null)
     })
+      callback(null)
   },
 
   getState: function (callback) {
